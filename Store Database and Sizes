@@ -1,0 +1,22 @@
+CREATE TABLE Store (item_num INTEGER PRIMARY KEY, item TEXT, store_price INTEGER, size TEXT, retail_price INTEGER);
+
+INSERT INTO Store 
+VALUES
+(1, 'Sweatshirt', 20, 'XL', 40),
+(2, 'T-shirt', 15, 'S', 25),
+(3, 'Jeans', 30, 'L', 55),
+(4, 'Jeans', 30, 'XL', 55),
+(5, 'Socks', 2, 'L', 5),
+(6, 'Shorts', 15, 'M', 40),
+(7, 'T-Shirt', 15, 'L', 25),
+(8, 'Sweatshirt', 20, 'M', 40),
+(9, 'Coat', 80, 'XXL', 200),
+(10, 'Leggins', 20, 'L', 80),
+(11, 'Earrings', 100, 'Diamond', 400),
+(12, 'T-Shirt', 30, 'S', 55),
+(13, 'Polo', 45, 'L', 75),
+(14, 'Sweathshirt', 50, 'XL', 75),
+(15, 'Jeans', 30, 'S', 55);
+
+SELECT * FROM Store where item = 'Jeans' Order by retail_price;
+Select sum(store_price) from Store;
