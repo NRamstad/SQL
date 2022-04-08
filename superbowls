@@ -66,8 +66,6 @@ INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,Cit
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 14 1968','II (2)','Green Bay Packers',33,'Oakland Raiders',14,'Bart Starr+','Orange Bowl','Miami','Florida');
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 15 1967','I (1)','Green Bay Packers',35,'Kansas City Chiefs',10,'Bart Starr+','Memorial Coliseum','Los Angeles','California');
 
-SELECT *
-from superbowls;
 
 SELECT COUNT (*),
     CASE
@@ -75,7 +73,8 @@ SELECT COUNT (*),
         WHEN winner_pts <= 27 then " Under 28"
     END as "Winner_Over_Under_28"
 from superbowls
-GROUP BY Winner_Over_under_28;
+GROUP BY Winner_Over_under_28
+order by Count(*) desc;
 
 select max(winner_pts), max(loser_pts), min(winner_pts),avg(winner_pts), avg(loser_pts)
 from superbowls;
@@ -85,3 +84,7 @@ from superbowls
 group by mvp
 having count(mvp) >= 2
 order by count(mvp) desc;
+
+select date, winner, loser
+from superbowls
+Where winner like '%green%' or winner like '%england%';
